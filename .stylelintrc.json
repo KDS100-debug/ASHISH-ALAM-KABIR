@@ -1,0 +1,10 @@
+{
+  "extends": ["stylelint-config-recommended"],
+  "rules": {
+    "at-rule-no-unknown": [true, { "ignoreAtRules": ["layer"] }],
+    "color-named": "never",
+    "declaration-no-important": true,
+    "unit-whitelist": ["px", "rem", "%", "vh", "vw", "em", "ch"],
+    "max-empty-lines": 2
+  }
+}

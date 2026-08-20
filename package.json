@@ -1,0 +1,13 @@
+{
+  "name": "aak-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint:css": "stylelint \"**/*.css\" --allow-empty-input",
+    "lint:css:fix": "stylelint --fix \"**/*.css\""
+  },
+  "devDependencies": {
+    "stylelint": "^15.0.0",
+    "stylelint-config-recommended": "^9.0.0"
+  }
+}
