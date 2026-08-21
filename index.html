@@ -663,6 +663,48 @@
       </div>
     </footer>
   </div>
+
+  <button class="ai-launcher" id="ai-launcher" type="button" aria-expanded="false" aria-controls="ai-chat-panel" aria-label="Open Kabir AI chat">
+    <span class="ai-launcher-badge">✦</span>
+    <span>Ask Kabir AI</span>
+  </button>
+
+  <aside class="ai-chat-panel" id="ai-chat-panel" aria-live="polite" aria-label="Kabir AI portfolio assistant" hidden>
+    <div class="ai-chat-header">
+      <div>
+        <div class="ai-chat-title">Kabir AI</div>
+        <div class="ai-chat-subtitle">AI Portfolio Assistant</div>
+      </div>
+      <button class="ai-chat-close" id="ai-chat-close" type="button" aria-label="Close AI assistant">×</button>
+    </div>
+
+    <div class="ai-chat-body" id="ai-chat-body">
+      <div class="ai-welcome">
+        <p><strong>Hi, I'm Kabir AI.</strong> I can help you explore Kabir's projects, skills, experience, GitHub work, and resume.</p>
+      </div>
+      <div class="ai-suggestions" id="ai-suggestions" aria-label="Suggested questions">
+        <button type="button" class="ai-suggestion">Machine Learning Projects</button>
+        <button type="button" class="ai-suggestion">Technical Skills</button>
+        <button type="button" class="ai-suggestion">Why hire Kabir?</button>
+        <button type="button" class="ai-suggestion">View Resume</button>
+        <button type="button" class="ai-suggestion" id="ai-github-suggestion">Recent GitHub Work</button>
+      </div>
+      <div class="ai-recruiter-box">
+        <button type="button" class="ai-recruiter-toggle" id="ai-recruiter-toggle">Recruiter Mode</button>
+        <textarea id="ai-job-description" rows="3" placeholder="Paste a job description to compare with Kabir's portfolio..."></textarea>
+      </div>
+    </div>
+
+    <div class="ai-chat-input-wrap">
+      <label class="sr-only" for="ai-chat-input">Ask about Kabir</label>
+      <textarea id="ai-chat-input" rows="1" placeholder="Ask about Kabir..."></textarea>
+      <button class="ai-send" id="ai-send" type="button" aria-label="Send message">➤</button>
+    </div>
+    <div class="ai-chat-footer">
+      <span>AI responses are generated from portfolio information and may need verification.</span>
+    </div>
+  </aside>
+
   <script src="data.js"></script>
   <script src="script.js"></script>
 </body>

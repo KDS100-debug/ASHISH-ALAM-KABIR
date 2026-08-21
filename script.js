@@ -82,7 +82,10 @@ function renderProjects() {
         </div>
         <div class="project-card-footer">
           <span class="project-type"><i class="bi bi-github" aria-hidden="true"></i> Open source work</span>
-          <a href="${project.repo}" target="_blank" rel="noreferrer">View Repository <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          <div class="project-card-actions">
+            <button class="project-ai-trigger" type="button" data-ai-project="${project.title}">Ask AI</button>
+            <a href="${project.repo}" target="_blank" rel="noreferrer">View Repository <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+          </div>
         </div>
       </article>
     `;
@@ -386,6 +389,247 @@ function setupHeroTitleAnimation() {
   observer.observe(hero);
 }
 
+function initAiChat() {
+  const launcher = document.getElementById('ai-launcher');
+  const panel = document.getElementById('ai-chat-panel');
+  const closeButton = document.getElementById('ai-chat-close');
+  const input = document.getElementById('ai-chat-input');
+  const sendButton = document.getElementById('ai-send');
+  const body = document.getElementById('ai-chat-body');
+  const suggestions = document.querySelectorAll('.ai-suggestion');
+  const recruiterToggle = document.getElementById('ai-recruiter-toggle');
+  const recruiterBox = document.getElementById('ai-job-description');
+  const githubSuggestion = document.getElementById('ai-github-suggestion');
+
+  if (!launcher || !panel || !body || !input || !sendButton) return;
+
+  const state = {
+    messageHistory: [],
+    selectedProject: null,
+    recruiterMode: false,
+  };
+
+  const escapeHtml = (value) => String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+
+  const formatMessage = (message) => {
+    const text = escapeHtml(message || '').replace(/\n/g, '<br />');
+    return text.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noreferrer">$1</a>');
+  };
+
+  const appendMessage = (role, message, options = {}) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = `ai-message ai-message-${role}`;
+    const bubble = document.createElement('div');
+    bubble.className = 'ai-message-bubble';
+
+    if (role === 'assistant') {
+      bubble.innerHTML = formatMessage(message);
+    } else {
+      bubble.textContent = message;
+    }
+
+    if (options.actions) {
+      const actions = document.createElement('div');
+      actions.className = 'ai-message-actions';
+      options.actions.forEach((action) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'ai-inline-action';
+        button.textContent = action.label;
+        button.addEventListener('click', () => {
+          if (action.type === 'project') {
+            const target = action.slug || action.value;
+            if (target) {
+              state.selectedProject = target;
+              const askText = `Explain the ${target.replace(/-/g, ' ')} project.`;
+              input.value = askText;
+              handleSubmit(askText);
+            }
+          }
+
+          if (action.type === 'question' && action.value) {
+            openPanel();
+            handleSubmit(action.value);
+          }
+        });
+        actions.appendChild(button);
+      });
+      bubble.appendChild(actions);
+    }
+
+    wrapper.appendChild(bubble);
+    body.appendChild(wrapper);
+    body.scrollTop = body.scrollHeight;
+  };
+
+  const setTyping = (isTyping) => {
+    let indicator = document.getElementById('ai-typing-indicator');
+    if (isTyping) {
+      if (!indicator) {
+        indicator = document.createElement('div');
+        indicator.id = 'ai-typing-indicator';
+        indicator.className = 'ai-message ai-message-assistant';
+        indicator.innerHTML = '<div class="ai-message-bubble ai-typing-bubble"><span></span><span></span><span></span></div>';
+        body.appendChild(indicator);
+      }
+    } else if (indicator) {
+      indicator.remove();
+    }
+    body.scrollTop = body.scrollHeight;
+  };
+
+  const submitRecruiterMode = async () => {
+    if (!recruiterBox) return;
+    const description = recruiterBox.value.trim();
+    if (!description) {
+      appendMessage('assistant', 'Paste a job description to compare it against Kabir\'s verified portfolio evidence.');
+      return;
+    }
+    recruiterBox.value = '';
+    state.recruiterMode = false;
+    recruiterToggle?.classList.remove('is-active');
+    recruiterBox.hidden = true;
+    await handleSubmit(`Compare this job description with Kabir's skills:\n${description}`);
+  };
+
+  const handleSubmit = async (draftText) => {
+    const value = (draftText || input.value || '').trim();
+    if (!value) return;
+
+    input.value = '';
+    input.style.height = 'auto';
+    appendMessage('user', value);
+    state.messageHistory.push({ role: 'user', content: value });
+    setTyping(true);
+
+    try {
+      const response = await fetch('/api/ai/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: value,
+          messages: state.messageHistory.slice(-10),
+          selectedProject: state.selectedProject,
+          recruiterMode: state.recruiterMode ? value : null,
+        }),
+      });
+      const data = await response.json();
+      const answer = data.answer || 'I could not find a verified answer in the current portfolio data.';
+      state.messageHistory.push({ role: 'assistant', content: answer });
+      setTyping(false);
+      appendMessage('assistant', answer, { actions: (data.relatedQuestions || []).slice(0, 3).map((question) => ({ label: question, type: 'question', value: question })) });
+      if (data.warning) {
+        appendMessage('assistant', data.warning);
+      }
+    } catch (error) {
+      setTyping(false);
+      appendMessage('assistant', 'I could not connect to the AI service right now. Please try again shortly.');
+    }
+
+    state.recruiterMode = false;
+    if (recruiterBox) recruiterBox.hidden = true;
+    recruiterToggle?.classList.remove('is-active');
+  };
+
+  const openPanel = () => {
+    panel.hidden = false;
+    launcher.setAttribute('aria-expanded', 'true');
+    requestAnimationFrame(() => input.focus());
+  };
+
+  const closePanel = () => {
+    panel.hidden = true;
+    launcher.setAttribute('aria-expanded', 'false');
+  };
+
+  launcher.addEventListener('click', () => {
+    if (panel.hidden) openPanel(); else closePanel();
+  });
+
+  closeButton.addEventListener('click', closePanel);
+  sendButton.addEventListener('click', () => handleSubmit(input.value));
+
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      handleSubmit();
+    }
+  });
+
+  input.addEventListener('input', () => {
+    input.style.height = 'auto';
+    input.style.height = `${Math.min(input.scrollHeight, 140)}px`;
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !panel.hidden) closePanel();
+  });
+
+  suggestions.forEach((button) => {
+    button.addEventListener('click', () => {
+      const value = button.textContent.trim();
+      if (button === githubSuggestion) {
+        openPanel();
+        appendMessage('assistant', 'I am fetching the latest public GitHub metadata for Kabir and comparing it with the portfolio context.');
+        fetch('/api/ai/github')
+          .then((response) => response.json())
+          .then((data) => {
+            const repos = Array.isArray(data.repos) ? data.repos : [];
+            const summary = repos.map((repo) => `- ${repo.name}: ${repo.description || 'No description provided.'} (${repo.language || 'Unknown'})`).join('\n');
+            appendMessage('assistant', summary || 'GitHub metadata is not available right now.');
+          })
+          .catch(() => appendMessage('assistant', 'GitHub metadata is unavailable right now, but the portfolio still provides verified project context.'));
+        return;
+      }
+      openPanel();
+      handleSubmit(value);
+    });
+  });
+
+  recruiterToggle?.addEventListener('click', () => {
+    state.recruiterMode = !state.recruiterMode;
+    recruiterToggle.classList.toggle('is-active', state.recruiterMode);
+    if (recruiterBox) {
+      recruiterBox.hidden = !state.recruiterMode;
+      if (state.recruiterMode) {
+        recruiterBox.focus();
+      }
+    }
+    if (!state.recruiterMode && recruiterBox) recruiterBox.value = '';
+  });
+
+  recruiterBox?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) {
+      event.preventDefault();
+      submitRecruiterMode();
+    }
+  });
+
+  sendButton.addEventListener('click', () => {
+    if (state.recruiterMode && recruiterBox && !recruiterBox.hidden) {
+      submitRecruiterMode();
+      return;
+    }
+    handleSubmit();
+  });
+
+  const projectAskTriggers = document.querySelectorAll('[data-ai-project]');
+  projectAskTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      const projectName = trigger.getAttribute('data-ai-project');
+      state.selectedProject = projectName;
+      openPanel();
+      handleSubmit(`Explain the ${projectName} project.`);
+    });
+  });
+}
+
 function init() {
   document.body.classList.add('js-enabled');
   renderProjects();
@@ -403,6 +647,7 @@ function init() {
   setupResumeModal();
   setupContactForm();
   setupProfileVideo();
+  initAiChat();
 
   window.addEventListener('scroll', updateScrollState, { passive: true });
 }

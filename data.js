@@ -9,6 +9,19 @@ const portfolioData = {
     github: 'https://github.com/AshishAlamKabir',
     portfolio: 'https://ashishalamkabir.com',
   },
+  profile: {
+    name: 'Ashish Alam Kabir',
+    headline: 'Full-Stack Developer & Data Analyst',
+    location: 'Electronic City, Bengaluru',
+    summary: 'Full-Stack Developer and Data Analyst with a Computer Science background and hands-on experience developing database-backed applications, Python-based analytical workflows, and business intelligence solutions.',
+    roles: ['Full-Stack Developer', 'Data Analyst', 'Python Developer', 'Backend Developer', 'Machine Learning Enthusiast'],
+    resume: 'assets/CV.pdf',
+    email: 'contact@ashishalamkabir.com',
+    github: 'https://github.com/AshishAlamKabir',
+    linkedin: 'https://www.linkedin.com/in/ashishalamkabir/',
+    portfolio: 'https://ashishalamkabir.com',
+    instagram: 'https://www.instagram.com/atheist_arian/'
+  },
   linkedInCertificates: [
     ['CertificateOfCompletion_Basics of Data Visualization Analysis.pdf', 'https://www.linkedin.com/learning/certificates/b010034762ebb71e0597654e73e13f98a00fed8d6bf0cb6f850bff0eabb4b3dc?trk=share_certificate'],
     ['CertificateOfCompletion_Career Essentials in Generative AI by Microsoft and LinkedIn.pdf', 'https://www.linkedin.com/learning/certificates/9118842f21f6462dfc6e875bbaa6cb0abbd52349a102a83e0d0e33191f3bc941?trk=share_certificate'],
@@ -71,3 +84,7 @@ const portfolioData = {
     },
   ],
 };
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { portfolioData };
+}
