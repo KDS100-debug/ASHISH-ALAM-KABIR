@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The personal photo gallery of Ashish Alam Kabir, arranged by frame, place, date, and map." />
+  <title>Personal Gallery | Ashish Alam Kabir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body class="gallery-page">
+  <div class="gallery-orb gallery-orb-one" aria-hidden="true"></div>
+  <div class="gallery-orb gallery-orb-two" aria-hidden="true"></div>
+
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html#hero" aria-label="Ashish Alam Kabir — Home">
+        <span class="brand-mark"><img src="assets/profile.jpg" alt="" aria-hidden="true" /></span>
+        <span class="brand-copy"><strong>Ashish Alam Kabir</strong><small>Developer &amp; Analyst</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
+        <a href="index.html#about"><i class="bi bi-person-circle"></i> About</a>
+        <a href="index.html#skills"><i class="bi bi-tools"></i> Skills</a>
+        <a href="index.html#projects"><i class="bi bi-folder"></i> Projects</a>
+        <a href="index.html#experience"><i class="bi bi-briefcase-fill"></i> Experience</a>
+        <a href="index.html#education"><i class="bi bi-mortarboard-fill"></i> Education</a>
+        <a href="index.html#certifications"><i class="bi bi-award-fill"></i> Certifications</a>
+        <a href="index.html#contact"><i class="bi bi-envelope-fill"></i> Contact</a>
+        <a class="active" href="gallery.html" aria-current="page"><i class="bi bi-images"></i> Gallery</a>
+        <a href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="nav-social" href="index.html" aria-label="Return to portfolio"><i class="bi bi-arrow-left"></i></a>
+      </div>
+    </header>
+
+    <main class="gallery-main">
+      <section class="gallery-hero" aria-labelledby="gallery-title">
+        <div class="gallery-hero-copy">
+          <span class="gallery-kicker"><i class="bi bi-stars" aria-hidden="true"></i> Personal archive</span>
+          <h1 id="gallery-title">Moments, places <em>&amp;</em><br />the story between.</h1>
+          <p>A small visual archive of portraits and personal chapters—made to be explored through frames, places, time, and map.</p>
+          <a class="gallery-scroll-link" href="#explore-gallery">Explore the collection <i class="bi bi-arrow-down" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="gallery-hero-frames" aria-label="Featured portraits">
+          <button class="hero-frame hero-frame-primary" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Original portrait" data-lightbox-meta="Bengaluru · Added 2026">
+            <img src="assets/profile.jpg" alt="Black and white side-profile portrait of Ashish Alam Kabir" />
+            <span>Original portrait</span>
+          </button>
+          <button class="hero-frame hero-frame-secondary" type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Illustrated portrait" data-lightbox-meta="Digital studio · Added 2026">
+            <img src="assets/ANIMATION.png" alt="Illustrated portrait of Ashish Alam Kabir" />
+            <span>Illustrated edition</span>
+          </button>
+          <span class="frame-note frame-note-place"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Bengaluru</span>
+          <span class="frame-note frame-note-year">Est. 2026</span>
+        </div>
+      </section>
+
+      <section class="gallery-explorer" id="explore-gallery" aria-labelledby="explorer-title">
+        <div class="explorer-heading">
+          <div>
+            <span class="gallery-kicker">Choose your view</span>
+            <h2 id="explorer-title">Explore the archive</h2>
+          </div>
+          <p>Two portraits, four ways to see them. Dates refer to when a portrait was added to this collection.</p>
+        </div>
+
+        <div class="gallery-tabs" role="tablist" aria-label="Gallery views">
+          <button class="gallery-tab is-active" id="tab-frames" type="button" role="tab" aria-selected="true" aria-controls="panel-frames" data-gallery-view="frames"><i class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></i> Frames</button>
+          <button class="gallery-tab" id="tab-places" type="button" role="tab" aria-selected="false" aria-controls="panel-places" data-gallery-view="places" tabindex="-1"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Places</button>
+          <button class="gallery-tab" id="tab-timeline" type="button" role="tab" aria-selected="false" aria-controls="panel-timeline" data-gallery-view="timeline" tabindex="-1"><i class="bi bi-calendar3" aria-hidden="true"></i> Timeline</button>
+          <button class="gallery-tab" id="tab-map" type="button" role="tab" aria-selected="false" aria-controls="panel-map" data-gallery-view="map" tabindex="-1"><i class="bi bi-map-fill" aria-hidden="true"></i> Map</button>
+        </div>
+
+        <div class="gallery-panel" id="panel-frames" role="tabpanel" aria-labelledby="tab-frames" data-gallery-panel="frames">
+          <div class="frame-grid">
+            <button class="photo-card photo-card-tall frame-polaroid" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Quiet focus" data-lightbox-meta="Original portrait · 2026">
+              <span class="photo-visual"><img src="assets/profile.jpg" alt="Ashish Alam Kabir in a black and white side-profile portrait" /></span>
+              <span class="photo-caption"><strong>Quiet focus</strong><small>Original portrait · 2026</small></span>
+            </button>
+
+            <button class="photo-card photo-card-wide frame-soft" type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Illustrated self" data-lightbox-meta="Creative study · 2026">
+              <span class="photo-visual"><img src="assets/ANIMATION.png" alt="Stylized illustrated portrait of Ashish Alam Kabir" /></span>
+              <span class="photo-caption"><strong>Illustrated self</strong><small>Creative study · 2026</small></span>
+            </button>
+
+            <button class="photo-card frame-circle" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="In profile" data-lightbox-meta="Monochrome crop · 2026">
+              <span class="photo-visual"><img src="assets/profile.jpg" alt="Close crop of Ashish Alam Kabir's profile portrait" /></span>
+              <span class="photo-caption"><strong>In profile</strong><small>Monochrome crop</small></span>
+            </button>
+
+            <button class="photo-card photo-card-tall frame-arch" type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="A digital chapter" data-lightbox-meta="Illustrated edition · 2026">
+              <span class="photo-visual"><img src="assets/ANIMATION.png" alt="Full illustrated portrait of Ashish Alam Kabir" /></span>
+              <span class="photo-caption"><strong>A digital chapter</strong><small>Illustrated edition</small></span>
+            </button>
+
+            <button class="photo-card photo-card-wide frame-film" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Between thoughts" data-lightbox-meta="Bengaluru chapter · 2026">
+              <span class="photo-visual"><img src="assets/profile.jpg" alt="Wide crop of Ashish Alam Kabir's black and white portrait" /></span>
+              <span class="photo-caption"><strong>Between thoughts</strong><small>Bengaluru chapter</small></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="gallery-panel" id="panel-places" role="tabpanel" aria-labelledby="tab-places" data-gallery-panel="places" hidden>
+          <div class="place-feature">
+            <div class="place-feature-copy">
+              <span class="place-number">01</span>
+              <div>
+                <span class="gallery-kicker"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Current base</span>
+                <h3>Bengaluru, Karnataka</h3>
+                <p>The present-day chapter of the collection: a city of ideas, building, learning, and new beginnings.</p>
+                <span class="place-count"><i class="bi bi-images" aria-hidden="true"></i> 2 portraits in this chapter</span>
+              </div>
+            </div>
+            <div class="place-photo-stack">
+              <button type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Bengaluru portrait" data-lightbox-meta="Current base · Added 2026"><img src="assets/profile.jpg" alt="Ashish Alam Kabir portrait associated with his Bengaluru chapter" /></button>
+              <button type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Bengaluru illustrated portrait" data-lightbox-meta="Current base · Added 2026"><img src="assets/ANIMATION.png" alt="Illustrated portrait associated with Ashish Alam Kabir's Bengaluru chapter" /></button>
+            </div>
+          </div>
+
+          <div class="place-feature place-feature-digital">
+            <div class="place-feature-copy">
+              <span class="place-number">02</span>
+              <div>
+                <span class="gallery-kicker"><i class="bi bi-brush-fill" aria-hidden="true"></i> Location independent</span>
+                <h3>Digital Studio</h3>
+                <p>A creative space rather than a physical pin—the illustrated version of a personal portrait.</p>
+                <span class="place-count"><i class="bi bi-image" aria-hidden="true"></i> 1 creative edition</span>
+              </div>
+            </div>
+            <button class="digital-place-art" type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Digital studio" data-lightbox-meta="Illustrated edition · Added 2026"><img src="assets/ANIMATION.png" alt="Illustrated portrait of Ashish Alam Kabir" /></button>
+          </div>
+        </div>
+
+        <div class="gallery-panel" id="panel-timeline" role="tabpanel" aria-labelledby="tab-timeline" data-gallery-panel="timeline" hidden>
+          <div class="timeline-intro">
+            <span class="gallery-kicker"><i class="bi bi-clock-history" aria-hidden="true"></i> Collection timeline</span>
+            <h3>Added in 2026</h3>
+            <p>The beginning of this personal visual archive.</p>
+          </div>
+          <ol class="photo-timeline">
+            <li>
+              <span class="timeline-marker">01</span>
+              <button class="timeline-photo" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Original portrait" data-lightbox-meta="Added 2026"><img src="assets/profile.jpg" alt="Original black and white portrait of Ashish Alam Kabir" /></button>
+              <div class="timeline-copy"><span>2026 · Original</span><h4>Quiet focus</h4><p>The first portrait in the archive, presented in its original monochrome style.</p></div>
+            </li>
+            <li>
+              <span class="timeline-marker">02</span>
+              <button class="timeline-photo" type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Illustrated portrait" data-lightbox-meta="Added 2026"><img src="assets/ANIMATION.png" alt="Illustrated portrait of Ashish Alam Kabir" /></button>
+              <div class="timeline-copy"><span>2026 · Illustrated</span><h4>A creative edition</h4><p>A warmer, illustrated interpretation that adds a second visual language to the collection.</p></div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="gallery-panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map" data-gallery-panel="map" hidden>
+          <div class="map-layout">
+            <div class="map-canvas">
+              <iframe title="Approximate map location of Bengaluru, India" src="https://www.openstreetmap.org/export/embed.html?bbox=77.3500%2C12.7500%2C77.8500%2C13.1500&amp;layer=mapnik&amp;marker=12.9716%2C77.5946" loading="lazy"></iframe>
+              <span class="map-privacy"><i class="bi bi-shield-check" aria-hidden="true"></i> Approximate location for privacy</span>
+            </div>
+            <div class="map-story">
+              <span class="gallery-kicker"><i class="bi bi-pin-map-fill" aria-hidden="true"></i> Mapped memory</span>
+              <h3>Bengaluru</h3>
+              <p>Current base and the geographic chapter connected to this collection.</p>
+              <div class="map-thumbnails">
+                <button type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Original portrait" data-lightbox-meta="Bengaluru · Added 2026"><img src="assets/profile.jpg" alt="Original portrait thumbnail" /></button>
+                <button type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Illustrated portrait" data-lightbox-meta="Bengaluru chapter · Added 2026"><img src="assets/ANIMATION.png" alt="Illustrated portrait thumbnail" /></button>
+              </div>
+              <a href="https://www.openstreetmap.org/?mlat=12.9716&amp;mlon=77.5946#map=11/12.9716/77.5946" target="_blank" rel="noreferrer">Open larger map <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-note" aria-label="Gallery note">
+        <i class="bi bi-camera-fill" aria-hidden="true"></i>
+        <div><span>More moments, soon.</span><p>This archive is designed to grow as new photos, places, and dates are added.</p></div>
+        <a href="index.html#contact">Get in touch <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+      </section>
+    </main>
+
+    <footer class="footer gallery-footer">
+      <div class="footer-main">
+        <div class="footer-identity">
+          <a class="footer-brand" href="index.html#hero" aria-label="Return to home">
+            <span class="footer-brand-mark"><img src="assets/profile.jpg" alt="" aria-hidden="true" /></span>
+            <span><strong>Ashish Alam Kabir</strong><small>Developer &amp; Analyst</small></span>
+          </a>
+          <p>A personal collection of moments, places, and creative portraits.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Gallery footer navigation">
+          <span>Explore</span>
+          <a href="index.html">Portfolio</a>
+          <a href="#explore-gallery">Gallery views</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="login.html">Login</a>
+        </nav>
+        <div class="footer-connect">
+          <span>Connect</span>
+          <a href="https://www.instagram.com/atheist_arian/" target="_blank" rel="noreferrer"><i class="bi bi-instagram" aria-hidden="true"></i> Instagram</a>
+          <a href="https://www.linkedin.com/in/ashishalamkabir/" target="_blank" rel="noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <a href="mailto:ashishalamkabir@gmail.com"><i class="bi bi-envelope-fill" aria-hidden="true"></i> Email</a>
+        </div>
+        <a class="footer-top" href="#gallery-title" aria-label="Back to top" title="Back to top"><i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ashish Alam Kabir</p>
+        <span>Personal Gallery · Bengaluru, India</span>
+      </div>
+    </footer>
+  </div>
+
+  <dialog class="photo-lightbox" id="photo-lightbox" aria-labelledby="lightbox-title">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" type="button" aria-label="Close photo viewer"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+      <div class="lightbox-stage"><img id="lightbox-image" src="assets/profile.jpg" alt="" /></div>
+      <div class="lightbox-caption"><h2 id="lightbox-title">Portrait</h2><p id="lightbox-meta"></p></div>
+    </div>
+  </dialog>
+
+  <script src="gallery.js"></script>
+</body>
+</html>

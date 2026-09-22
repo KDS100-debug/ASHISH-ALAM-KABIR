@@ -19,12 +19,16 @@ Copy `.env.example` to `.env.local` and add:
 2. `OPENAI_MODEL` (optional, defaults to `gpt-4o-mini`)
 3. `PORT` (optional, defaults to `3000`)
 4. `GITHUB_TOKEN` (optional for future GitHub integration)
+5. `SUPABASE_URL` (Supabase project URL)
+6. `SUPABASE_PUBLISHABLE_KEY` (public browser key; never use a service-role key)
+
+For authentication setup, database policies, and first-admin promotion, see [`supabase/README.md`](supabase/README.md).
 
 ### Local development
 
 ```bash
 npm install --legacy-peer-deps
-cp .env.example .env.local
+cp .env.example .env
 npm start
 ```
 

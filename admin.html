@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin Dashboard | Ashish Alam Kabir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body class="auth-page dashboard-page admin-page">
+  <div class="auth-background" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="auth-guard" id="auth-guard"><span class="auth-spinner"></span><p>Verifying administrator access…</p></div>
+
+  <div class="page-shell auth-shell protected-content" id="protected-content" hidden>
+    <header class="topbar auth-topbar dashboard-topbar">
+      <a class="brand" href="index.html" aria-label="Ashish Alam Kabir — Home">
+        <span class="brand-mark"><img src="assets/profile.jpg" alt="" aria-hidden="true" /></span>
+        <span class="brand-copy"><strong>Admin Console</strong><small>Ashish Alam Kabir</small></span>
+      </a>
+      <nav class="account-nav" aria-label="Admin navigation">
+        <a href="dashboard.html"><i class="bi bi-person" aria-hidden="true"></i> My account</a>
+        <a href="index.html"><i class="bi bi-house-door" aria-hidden="true"></i> Portfolio</a>
+        <button class="account-signout" id="sign-out" type="button"><i class="bi bi-box-arrow-right" aria-hidden="true"></i> Sign out</button>
+      </nav>
+    </header>
+
+    <main class="account-main admin-main">
+      <section class="admin-heading">
+        <div><span class="auth-eyebrow"><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> Administrator only</span><h1>User management</h1><p>Review registered portfolio accounts. Access to this data is enforced by Supabase row-level security.</p></div>
+        <div class="admin-identity"><span id="admin-initials">AK</span><div><small>Signed in as</small><strong id="admin-name">Administrator</strong><p id="admin-email">—</p></div></div>
+      </section>
+
+      <section class="admin-stats" aria-label="User statistics">
+        <article><span><i class="bi bi-people-fill" aria-hidden="true"></i></span><div><small>Total accounts</small><strong id="total-users">0</strong></div></article>
+        <article><span><i class="bi bi-person-fill" aria-hidden="true"></i></span><div><small>Standard users</small><strong id="standard-users">0</strong></div></article>
+        <article><span><i class="bi bi-shield-check" aria-hidden="true"></i></span><div><small>Administrators</small><strong id="admin-users">0</strong></div></article>
+      </section>
+
+      <section class="account-card admin-table-card" aria-labelledby="users-title">
+        <div class="admin-table-heading"><div><small>Supabase profiles</small><h2 id="users-title">Registered users</h2></div><label class="admin-search"><span class="sr-only">Search users</span><i class="bi bi-search" aria-hidden="true"></i><input id="user-search" type="search" placeholder="Search name or email" /></label></div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th scope="col">User</th><th scope="col">Role</th><th scope="col">Joined</th><th scope="col">Updated</th></tr></thead>
+            <tbody id="users-table-body"></tbody>
+          </table>
+          <div class="admin-empty" id="admin-empty" hidden><i class="bi bi-person-x" aria-hidden="true"></i><p>No matching users found.</p></div>
+        </div>
+        <p class="auth-status" id="admin-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="/vendor/supabase.js"></script>
+  <script src="auth-client.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

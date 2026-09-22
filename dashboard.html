@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>My Account | Ashish Alam Kabir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body class="auth-page dashboard-page">
+  <div class="auth-background" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="auth-guard" id="auth-guard"><span class="auth-spinner"></span><p>Checking your session…</p></div>
+
+  <div class="page-shell auth-shell protected-content" id="protected-content" hidden>
+    <header class="topbar auth-topbar dashboard-topbar">
+      <a class="brand" href="index.html" aria-label="Ashish Alam Kabir — Home">
+        <span class="brand-mark"><img src="assets/profile.jpg" alt="" aria-hidden="true" /></span>
+        <span class="brand-copy"><strong>Ashish Alam Kabir</strong><small>Member account</small></span>
+      </a>
+      <nav class="account-nav" aria-label="Account navigation">
+        <a href="index.html"><i class="bi bi-house-door" aria-hidden="true"></i> Portfolio</a>
+        <a href="gallery.html"><i class="bi bi-images" aria-hidden="true"></i> Gallery</a>
+        <a class="admin-only-link" id="admin-link" href="admin.html" hidden><i class="bi bi-shield-lock" aria-hidden="true"></i> Admin</a>
+        <button class="account-signout" id="sign-out" type="button"><i class="bi bi-box-arrow-right" aria-hidden="true"></i> Sign out</button>
+      </nav>
+    </header>
+
+    <main class="account-main">
+      <section class="account-hero">
+        <div>
+          <span class="auth-eyebrow"><i class="bi bi-person-check-fill" aria-hidden="true"></i> Signed in securely</span>
+          <h1>Welcome, <em id="welcome-name">member</em>.</h1>
+          <p>This is your private portfolio account area. Review your account details and keep your public display name up to date.</p>
+        </div>
+        <div class="account-avatar" aria-hidden="true"><span id="account-initials">AK</span></div>
+      </section>
+
+      <section class="account-grid">
+        <article class="account-card profile-summary-card">
+          <div class="account-card-heading"><span><i class="bi bi-person-vcard-fill" aria-hidden="true"></i></span><div><small>Account overview</small><h2>Your profile</h2></div></div>
+          <dl class="profile-details">
+            <div><dt>Email</dt><dd id="profile-email">—</dd></div>
+            <div><dt>Account type</dt><dd><span class="role-badge" id="profile-role">User</span></dd></div>
+            <div><dt>Member since</dt><dd id="profile-created">—</dd></div>
+          </dl>
+        </article>
+
+        <article class="account-card profile-edit-card">
+          <div class="account-card-heading"><span><i class="bi bi-pencil-square" aria-hidden="true"></i></span><div><small>Personal details</small><h2>Edit profile</h2></div></div>
+          <form class="account-form" id="profile-form">
+            <label class="auth-field"><span>Display name</span><span class="auth-input"><i class="bi bi-person" aria-hidden="true"></i><input id="profile-name" name="fullName" type="text" autocomplete="name" maxlength="80" required /></span></label>
+            <button class="auth-submit" id="profile-submit" type="submit"><span>Save changes</span><i class="bi bi-check2" aria-hidden="true"></i></button>
+            <p class="auth-status" id="profile-status" role="status" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <article class="account-card security-card">
+          <div class="account-card-heading"><span><i class="bi bi-shield-check" aria-hidden="true"></i></span><div><small>Protected by Supabase</small><h2>Session security</h2></div></div>
+          <p>Your access token refreshes automatically and profile access is restricted by PostgreSQL row-level security.</p>
+          <button class="secondary-action" id="sign-out-secondary" type="button"><i class="bi bi-box-arrow-right" aria-hidden="true"></i> Sign out of this device</button>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="/vendor/supabase.js"></script>
+  <script src="auth-client.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

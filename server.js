@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const OpenAI = require('openai');
+const path = require('path');
 const { getPortfolioProfile, getProjectsByCategory, getProjectBySlug, guardPrompt, buildFallbackAnswer } = require('./server/portfolio-agent');
 
 const app = express();
@@ -9,6 +10,23 @@ const githubUsername = 'AshishAlamKabir';
 const openai = process.env.OPENAI_API_KEY ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) : null;
 
 app.use(express.json({ limit: '512kb' }));
+
+app.get('/vendor/supabase.js', (req, res) => {
+  res.setHeader('Cache-Control', 'public, max-age=86400');
+  res.sendFile(path.join(__dirname, 'node_modules', '@supabase', 'supabase-js', 'dist', 'umd', 'supabase.js'));
+});
+
+app.get('/api/auth/config', (req, res) => {
+  const url = process.env.SUPABASE_URL || '';
+  const publishableKey = process.env.SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_ANON_KEY || '';
+
+  res.setHeader('Cache-Control', 'no-store');
+  res.json({
+    configured: Boolean(url && publishableKey),
+    url,
+    publishableKey,
+  });
+});
 
 async function fetchGitHubMetadata(username = githubUsername) {
   const headers = {
@@ -53,7 +71,11 @@ function buildPortfolioContext() {
 }
 
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', mode: openai ? 'openai' : 'grounded-fallback' });
+  res.json({
+    status: 'ok',
+    mode: openai ? 'openai' : 'grounded-fallback',
+    auth: process.env.SUPABASE_URL && (process.env.SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_ANON_KEY) ? 'supabase' : 'not-configured',
+  });
 });
 
 app.get('/api/ai/github', async (req, res) => {
