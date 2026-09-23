@@ -1041,3 +1041,91 @@
     animation: none;
   }
 }
+
+.auth-page {
+  --auth-violet: #a00000;
+  --auth-mint: #d00000;
+  --auth-coral: #e00000;
+  background: #050505;
+}
+
+.auth-page::before {
+  background: linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.18;
+}
+
+.auth-page::after {
+  opacity: 0.45;
+  background: radial-gradient(circle at 18% 12%, rgba(160, 0, 0, 0.18), transparent 28rem);
+}
+
+.auth-background span:nth-child(1) { background: #a00000; }
+.auth-background span:nth-child(2) { background: #4a0000; }
+.auth-background span:nth-child(3) { background: #d00000; }
+
+.auth-card,
+.account-card,
+.admin-table-card,
+.security-card {
+  background: #0d0d0d;
+  border-color: #282828;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
+}
+
+.auth-eyebrow,
+.auth-card-heading .bi,
+.account-hero .eyebrow,
+.admin-heading .eyebrow,
+.account-nav a:hover,
+.account-nav a:focus-visible,
+.account-nav a[aria-current="page"] {
+  color: #d00000;
+}
+
+.auth-input,
+.admin-search {
+  background: #0a0a0a;
+  border-color: #303030;
+}
+
+.auth-input:focus,
+.admin-search:focus-within {
+  border-color: #a00000;
+  box-shadow: 0 0 0 3px rgba(160, 0, 0, 0.16);
+}
+
+.auth-submit,
+.account-nav a[aria-current="page"] {
+  background: #9d0000;
+  border-color: #b30000;
+  color: #ffffff;
+}
+
+.auth-submit:hover,
+.auth-submit:focus-visible {
+  background: #d00000;
+}
+
+.auth-status.is-error,
+.auth-status.is-success,
+.role-badge,
+.admin-stats article > span {
+  background: rgba(160, 0, 0, 0.15);
+  border-color: #641818;
+  color: #f0b0b0;
+}
+
+.admin-table th {
+  background: #111111;
+  color: #898989;
+}
+
+.admin-table tr:hover td {
+  background: #151515;
+}
+
+.table-user > span {
+  background: #7c0000;
+  color: #ffffff;
+}

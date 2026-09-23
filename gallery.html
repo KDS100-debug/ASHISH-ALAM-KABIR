@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The personal photo gallery of Ashish Alam Kabir, arranged by frame, place, date, and map." />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+  <meta name="description" content="The personal photo gallery of Ashish Alam Kabir, organized into travel and portrait collections by place and date." />
   <title>Personal Gallery | Ashish Alam Kabir</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,21 +52,21 @@
         <div class="gallery-hero-copy">
           <span class="gallery-kicker"><i class="bi bi-stars" aria-hidden="true"></i> Personal archive</span>
           <h1 id="gallery-title">Moments, places <em>&amp;</em><br />the story between.</h1>
-          <p>A small visual archive of portraits and personal chapters—made to be explored through frames, places, time, and map.</p>
+          <p>A visual archive of portraits and journeys—now featuring a Sikkim chapter captured from misty Gangtok to the snow-covered mountains in February 2025.</p>
           <a class="gallery-scroll-link" href="#explore-gallery">Explore the collection <i class="bi bi-arrow-down" aria-hidden="true"></i></a>
         </div>
 
-        <div class="gallery-hero-frames" aria-label="Featured portraits">
-          <button class="hero-frame hero-frame-primary" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Original portrait" data-lightbox-meta="Bengaluru · Added 2026">
-            <img src="assets/profile.jpg" alt="Black and white side-profile portrait of Ashish Alam Kabir" />
-            <span>Original portrait</span>
+        <div class="gallery-hero-frames" aria-label="Featured Sikkim photographs">
+          <button class="hero-frame hero-frame-primary" type="button" data-lightbox-image="assets/gallery/sikkim/valley-overlook.jpg" data-lightbox-title="Valley overlook" data-lightbox-meta="Sikkim · 5 February 2025">
+            <img src="assets/gallery/sikkim/valley-overlook.jpg" alt="Ashish Alam Kabir looking across a misty mountain valley in Sikkim" fetchpriority="high" />
+            <span>Valley overlook</span>
           </button>
-          <button class="hero-frame hero-frame-secondary" type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Illustrated portrait" data-lightbox-meta="Digital studio · Added 2026">
-            <img src="assets/ANIMATION.png" alt="Illustrated portrait of Ashish Alam Kabir" />
-            <span>Illustrated edition</span>
+          <button class="hero-frame hero-frame-secondary" type="button" data-lightbox-image="assets/gallery/sikkim/snowfield-portrait.jpg" data-lightbox-title="Into the snow" data-lightbox-meta="North Sikkim · 6 February 2025">
+            <img src="assets/gallery/sikkim/snowfield-portrait.jpg" alt="Ashish Alam Kabir standing among snowy rocks beneath high mountain peaks" />
+            <span>Into the snow</span>
           </button>
-          <span class="frame-note frame-note-place"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Bengaluru</span>
-          <span class="frame-note frame-note-year">Est. 2026</span>
+          <span class="frame-note frame-note-place"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Sikkim</span>
+          <span class="frame-note frame-note-year">Feb. 2025</span>
         </div>
       </section>
 
@@ -70,7 +76,7 @@
             <span class="gallery-kicker">Choose your view</span>
             <h2 id="explorer-title">Explore the archive</h2>
           </div>
-          <p>Two portraits, four ways to see them. Dates refer to when a portrait was added to this collection.</p>
+          <p>Twenty-nine photographs across Delhi, Sikkim, Bengaluru, and a digital studio—organized by frame, place, time, and map.</p>
         </div>
 
         <div class="gallery-tabs" role="tablist" aria-label="Gallery views">
@@ -81,38 +87,226 @@
         </div>
 
         <div class="gallery-panel" id="panel-frames" role="tabpanel" aria-labelledby="tab-frames" data-gallery-panel="frames">
-          <div class="frame-grid">
-            <button class="photo-card photo-card-tall frame-polaroid" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Quiet focus" data-lightbox-meta="Original portrait · 2026">
-              <span class="photo-visual"><img src="assets/profile.jpg" alt="Ashish Alam Kabir in a black and white side-profile portrait" /></span>
-              <span class="photo-caption"><strong>Quiet focus</strong><small>Original portrait · 2026</small></span>
-            </button>
+          <section class="gallery-collection" aria-labelledby="delhi-collection-title">
+            <div class="collection-heading">
+              <div><span class="collection-index">01</span><div><span class="gallery-kicker">Travel collection</span><h3 id="delhi-collection-title">Delhi · October 2024</h3></div></div>
+              <p>Nine photographs from Qutub Minar, Raj Ghat, Jama Masjid, the Red Fort, Lotus Temple, India Gate, and the journey by train.</p>
+            </div>
+            <div class="frame-grid">
+              <button class="photo-card photo-card-portrait frame-polaroid" type="button" data-lightbox-image="assets/gallery/delhi/india-gate.jpg" data-lightbox-title="India Gate portrait" data-lightbox-meta="New Delhi · October 2024">
+                <span class="photo-visual"><img src="assets/gallery/delhi/india-gate.jpg" alt="Ashish Alam Kabir standing in front of India Gate" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>India Gate</strong><small>New Delhi · Oct. 2024</small></span>
+              </button>
 
-            <button class="photo-card photo-card-wide frame-soft" type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Illustrated self" data-lightbox-meta="Creative study · 2026">
-              <span class="photo-visual"><img src="assets/ANIMATION.png" alt="Stylized illustrated portrait of Ashish Alam Kabir" /></span>
-              <span class="photo-caption"><strong>Illustrated self</strong><small>Creative study · 2026</small></span>
-            </button>
+              <button class="photo-card photo-card-portrait frame-arch frame-photo-cover" type="button" data-lightbox-image="assets/gallery/delhi/qutub-minar.jpg" data-lightbox-title="Qutub Minar" data-lightbox-meta="Mehrauli, Delhi · 28 October 2024">
+                <span class="photo-visual"><img src="assets/gallery/delhi/qutub-minar.jpg" alt="Ashish Alam Kabir standing beneath a stone arch with Qutub Minar behind him" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Qutub Minar</strong><small>Mehrauli · 28 Oct.</small></span>
+              </button>
 
-            <button class="photo-card frame-circle" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="In profile" data-lightbox-meta="Monochrome crop · 2026">
-              <span class="photo-visual"><img src="assets/profile.jpg" alt="Close crop of Ashish Alam Kabir's profile portrait" /></span>
-              <span class="photo-caption"><strong>In profile</strong><small>Monochrome crop</small></span>
-            </button>
+              <button class="photo-card photo-card-portrait frame-detail" type="button" data-lightbox-image="assets/gallery/delhi/qutub-detail.jpg" data-lightbox-title="Carved histories" data-lightbox-meta="Qutub complex · 28 October 2024">
+                <span class="photo-visual"><img src="assets/gallery/delhi/qutub-detail.jpg" alt="Ashish Alam Kabir beside detailed historic stone carvings at the Qutub complex" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Carved histories</strong><small>Qutub complex</small></span>
+              </button>
 
-            <button class="photo-card photo-card-tall frame-arch" type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="A digital chapter" data-lightbox-meta="Illustrated edition · 2026">
-              <span class="photo-visual"><img src="assets/ANIMATION.png" alt="Full illustrated portrait of Ashish Alam Kabir" /></span>
-              <span class="photo-caption"><strong>A digital chapter</strong><small>Illustrated edition</small></span>
-            </button>
+              <button class="photo-card photo-card-portrait frame-soft frame-photo-cover" type="button" data-lightbox-image="assets/gallery/delhi/lotus-temple.jpg" data-lightbox-title="Lotus Temple" data-lightbox-meta="New Delhi · 29 October 2024">
+                <span class="photo-visual"><img src="assets/gallery/delhi/lotus-temple.jpg" alt="Ashish Alam Kabir standing in front of the Lotus Temple" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Lotus Temple</strong><small>29 October 2024</small></span>
+              </button>
 
-            <button class="photo-card photo-card-wide frame-film" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Between thoughts" data-lightbox-meta="Bengaluru chapter · 2026">
-              <span class="photo-visual"><img src="assets/profile.jpg" alt="Wide crop of Ashish Alam Kabir's black and white portrait" /></span>
-              <span class="photo-caption"><strong>Between thoughts</strong><small>Bengaluru chapter</small></span>
-            </button>
-          </div>
+              <button class="photo-card photo-card-landscape frame-film" type="button" data-lightbox-image="assets/gallery/delhi/lotus-temple-selfie.jpg" data-lightbox-title="Under the Lotus" data-lightbox-meta="Lotus Temple · 29 October 2024">
+                <span class="photo-visual"><img src="assets/gallery/delhi/lotus-temple-selfie.jpg" alt="Low-angle selfie beneath the curved exterior of the Lotus Temple" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Under the Lotus</strong><small>New Delhi</small></span>
+              </button>
+
+              <button class="photo-card photo-card-landscape frame-memorial" type="button" data-lightbox-image="assets/gallery/delhi/raj-ghat.jpg" data-lightbox-title="Raj Ghat" data-lightbox-meta="Delhi · 28 October 2024">
+                <span class="photo-visual"><img src="assets/gallery/delhi/raj-ghat.jpg" alt="The flower-decorated memorial and eternal flame at Raj Ghat" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Raj Ghat</strong><small>Remembering Mahatma Gandhi</small></span>
+              </button>
+
+              <button class="photo-card photo-card-landscape frame-night" type="button" data-lightbox-image="assets/gallery/delhi/jama-masjid-night.jpg" data-lightbox-title="Jama Masjid after dark" data-lightbox-meta="Old Delhi · 28 October 2024">
+                <span class="photo-visual"><img src="assets/gallery/delhi/jama-masjid-night.jpg" alt="Jama Masjid illuminated at night" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Jama Masjid after dark</strong><small>Old Delhi</small></span>
+              </button>
+
+              <button class="photo-card photo-card-panorama frame-night" type="button" data-lightbox-image="assets/gallery/delhi/red-fort-night.jpg" data-lightbox-title="Red Fort lights" data-lightbox-meta="Old Delhi · 28 October 2024" data-lightbox-rotate="90">
+                <span class="photo-visual"><img class="image-rotate-90" src="assets/gallery/delhi/red-fort-night.jpg" alt="Ashish Alam Kabir near the illuminated Red Fort at night" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Red Fort lights</strong><small>Old Delhi</small></span>
+              </button>
+
+              <button class="photo-card photo-card-portrait frame-journey" type="button" data-lightbox-image="assets/gallery/delhi/train-journey.jpg" data-lightbox-title="The journey onward" data-lightbox-meta="Train journey · 31 October 2024">
+                <span class="photo-visual"><img src="assets/gallery/delhi/train-journey.jpg" alt="Travel backpack on a train seat during the Delhi journey" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>The journey onward</strong><small>31 October 2024</small></span>
+              </button>
+            </div>
+          </section>
+
+          <section class="gallery-collection" aria-labelledby="sikkim-collection-title">
+            <div class="collection-heading">
+              <div><span class="collection-index">02</span><div><span class="gallery-kicker">Travel collection</span><h3 id="sikkim-collection-title">Sikkim · February 2025</h3></div></div>
+              <p>Eighteen photographs tracing four winter days through Gangtok, mountain towns, alpine roads, snowfields, waterfalls, and shared moments.</p>
+            </div>
+            <div class="frame-grid">
+              <button class="photo-card photo-card-portrait frame-polaroid" type="button" data-lightbox-image="assets/gallery/sikkim/valley-overlook.jpg" data-lightbox-title="Valley overlook" data-lightbox-meta="Sikkim · 5 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/valley-overlook.jpg" alt="Ashish Alam Kabir looking across a misty mountain valley in Sikkim" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Valley overlook</strong><small>Sikkim · 5 February 2025</small></span>
+              </button>
+
+              <button class="photo-card photo-card-landscape frame-soft" type="button" data-lightbox-image="assets/gallery/sikkim/waterfall-selfie.jpg" data-lightbox-title="Waterfall memories" data-lightbox-meta="Sikkim · 5 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/waterfall-selfie.jpg" alt="Ashish Alam Kabir and a companion taking a selfie near a waterfall and prayer flags" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Waterfall memories</strong><small>Sikkim · 5 February 2025</small></span>
+              </button>
+
+              <button class="photo-card photo-card-landscape frame-film" type="button" data-lightbox-image="assets/gallery/sikkim/mountain-ridgeline.jpg" data-lightbox-title="Blue-sky ridgeline" data-lightbox-meta="North Sikkim · 6 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/mountain-ridgeline.jpg" alt="Snow-dusted Sikkim mountain ridges beneath a clear blue sky" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Blue-sky ridgeline</strong><small>North Sikkim · 6 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-portrait frame-arch" type="button" data-lightbox-image="assets/gallery/sikkim/snowfield-portrait.jpg" data-lightbox-title="Into the snow" data-lightbox-meta="North Sikkim · 6 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/snowfield-portrait.jpg" alt="Ashish Alam Kabir standing among snowy rocks beneath high mountain peaks" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Into the snow</strong><small>North Sikkim · 6 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-portrait frame-detail" type="button" data-lightbox-image="assets/gallery/sikkim/snowbound-keepsake.jpg" data-lightbox-title="Snowbound keepsake" data-lightbox-meta="North Sikkim · 6 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/snowbound-keepsake.jpg" alt="A keepsake bottle resting on a rock in a snowy mountain landscape" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Snowbound keepsake</strong><small>North Sikkim · 6 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-landscape frame-memorial" type="button" data-lightbox-image="assets/gallery/sikkim/high-altitude-flags.jpg" data-lightbox-title="High-altitude colors" data-lightbox-meta="North Sikkim · 6 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/high-altitude-flags.jpg" alt="The Indian flag and colorful flags flying at a high-altitude Sikkim outpost" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>High-altitude colors</strong><small>North Sikkim · 6 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-portrait frame-journey" type="button" data-lightbox-image="assets/gallery/sikkim/alpine-road.jpg" data-lightbox-title="The alpine road" data-lightbox-meta="North Sikkim · 6 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/alpine-road.jpg" alt="A high-altitude road crossing a broad, rocky Sikkim landscape" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>The alpine road</strong><small>North Sikkim · 6 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-landscape frame-polaroid" type="button" data-lightbox-image="assets/gallery/sikkim/mountain-morning.jpg" data-lightbox-title="Mountain morning" data-lightbox-meta="North Sikkim · 7 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/mountain-morning.jpg" alt="A traveler standing before dramatic sunlit peaks in North Sikkim" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Mountain morning</strong><small>North Sikkim · 7 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-panorama frame-film" type="button" data-lightbox-image="assets/gallery/sikkim/mountain-panorama.jpg" data-lightbox-title="Valley in full" data-lightbox-meta="North Sikkim · 7 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/mountain-panorama.jpg" alt="A panoramic sweep of a frosty valley and mountain range in North Sikkim" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Valley in full</strong><small>North Sikkim · 7 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-landscape frame-soft" type="button" data-lightbox-image="assets/gallery/sikkim/snowy-peaks.jpg" data-lightbox-title="Snow-lined peaks" data-lightbox-meta="North Sikkim · 7 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/snowy-peaks.jpg" alt="Snow-lined mountain peaks rising beyond a pine forest in Sikkim" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Snow-lined peaks</strong><small>North Sikkim · 7 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-portrait frame-arch" type="button" data-lightbox-image="assets/gallery/sikkim/mountain-town.jpg" data-lightbox-title="Mountain town morning" data-lightbox-meta="North Sikkim · 7 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/mountain-town.jpg" alt="Traditional buildings set below steep mountains under a blue sky" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Mountain town morning</strong><small>North Sikkim · 7 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-portrait frame-detail" type="button" data-lightbox-image="assets/gallery/sikkim/shared-footsteps.jpg" data-lightbox-title="Shared footsteps" data-lightbox-meta="Sikkim · 7 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/shared-footsteps.jpg" alt="Two pairs of shoes and their shadows on a sunlit mountain road" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Shared footsteps</strong><small>Sikkim · 7 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-landscape frame-polaroid" type="button" data-lightbox-image="assets/gallery/sikkim/mountain-portrait.jpg" data-lightbox-title="Against the peaks" data-lightbox-meta="North Sikkim · 7 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/mountain-portrait.jpg" alt="Ashish Alam Kabir and a companion posing in front of a mountain valley" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Against the peaks</strong><small>North Sikkim · 7 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-landscape frame-detail" type="button" data-lightbox-image="assets/gallery/sikkim/gangtok-souvenirs.jpg" data-lightbox-title="Gangtok finds" data-lightbox-meta="Gangtok · 7 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/gangtok-souvenirs.jpg" alt="Colorful anime figures and Buddha statues displayed in a Gangtok shop" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Gangtok finds</strong><small>Gangtok · 7 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-landscape frame-soft" type="button" data-lightbox-image="assets/gallery/sikkim/hotel-arrival.jpg" data-lightbox-title="A warm arrival" data-lightbox-meta="Gangtok · 7 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/hotel-arrival.jpg" alt="Warmly lit hotel reception in Gangtok" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>A warm arrival</strong><small>Gangtok · 7 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-portrait frame-night" type="button" data-lightbox-image="assets/gallery/sikkim/mg-marg-evening.jpg" data-lightbox-title="MG Marg after dark" data-lightbox-meta="Gangtok · 7 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/mg-marg-evening.jpg" alt="Ashish Alam Kabir sitting on a bench along the illuminated MG Marg in Gangtok" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>MG Marg after dark</strong><small>Gangtok · 7 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-landscape frame-memorial" type="button" data-lightbox-image="assets/gallery/sikkim/mountain-group.jpg" data-lightbox-title="Friends in the mountains" data-lightbox-meta="North Sikkim · 8 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/mountain-group.jpg" alt="Four friends posing together against a dramatic mountain backdrop" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Friends in the mountains</strong><small>North Sikkim · 8 February</small></span>
+              </button>
+
+              <button class="photo-card photo-card-portrait frame-journey" type="button" data-lightbox-image="assets/gallery/sikkim/gangtok-ropeway.jpg" data-lightbox-title="Above Gangtok" data-lightbox-meta="Gangtok · 8 February 2025">
+                <span class="photo-visual"><img src="assets/gallery/sikkim/gangtok-ropeway.jpg" alt="A misty view over Gangtok from the ropeway above the city" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Above Gangtok</strong><small>Gangtok · 8 February</small></span>
+              </button>
+            </div>
+          </section>
+
+          <section class="gallery-collection" aria-labelledby="portrait-collection-title">
+            <div class="collection-heading">
+              <div><span class="collection-index">03</span><div><span class="gallery-kicker">Portrait collection</span><h3 id="portrait-collection-title">Studio &amp; Bengaluru</h3></div></div>
+              <p>The original monochrome portrait and its illustrated creative edition.</p>
+            </div>
+            <div class="frame-grid frame-grid-portraits">
+              <button class="photo-card photo-card-square frame-polaroid" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Quiet focus" data-lightbox-meta="Original portrait · 2026">
+                <span class="photo-visual"><img src="assets/profile.jpg" alt="Ashish Alam Kabir in a black and white side-profile portrait" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Quiet focus</strong><small>Original portrait · 2026</small></span>
+              </button>
+
+              <button class="photo-card photo-card-square frame-soft" type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Illustrated self" data-lightbox-meta="Creative study · 2026">
+                <span class="photo-visual"><img src="assets/ANIMATION.png" alt="Stylized illustrated portrait of Ashish Alam Kabir" loading="lazy" decoding="async" /></span>
+                <span class="photo-caption"><strong>Illustrated self</strong><small>Creative study · 2026</small></span>
+              </button>
+            </div>
+          </section>
         </div>
 
         <div class="gallery-panel" id="panel-places" role="tabpanel" aria-labelledby="tab-places" data-gallery-panel="places" hidden>
-          <div class="place-feature">
+          <div class="place-feature place-feature-delhi">
             <div class="place-feature-copy">
               <span class="place-number">01</span>
+              <div>
+                <span class="gallery-kicker"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Travel chapter</span>
+                <h3>Delhi</h3>
+                <p>A four-day journey through monuments, memorials, sacred spaces, and the night lights of India's capital.</p>
+                <span class="place-count"><i class="bi bi-images" aria-hidden="true"></i> 9 photographs · October 2024</span>
+              </div>
+            </div>
+            <div class="place-photo-mosaic" aria-label="Delhi collection previews">
+              <button type="button" data-lightbox-image="assets/gallery/delhi/india-gate.jpg" data-lightbox-title="India Gate portrait" data-lightbox-meta="New Delhi · October 2024"><img src="assets/gallery/delhi/india-gate.jpg" alt="India Gate portrait" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/delhi/qutub-minar.jpg" data-lightbox-title="Qutub Minar" data-lightbox-meta="Mehrauli, Delhi · 28 October 2024"><img src="assets/gallery/delhi/qutub-minar.jpg" alt="Qutub Minar framed by a historic arch" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/delhi/qutub-detail.jpg" data-lightbox-title="Carved histories" data-lightbox-meta="Qutub complex · 28 October 2024"><img src="assets/gallery/delhi/qutub-detail.jpg" alt="Stone carvings at the Qutub complex" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/delhi/lotus-temple.jpg" data-lightbox-title="Lotus Temple" data-lightbox-meta="New Delhi · 29 October 2024"><img src="assets/gallery/delhi/lotus-temple.jpg" alt="Portrait in front of the Lotus Temple" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/delhi/lotus-temple-selfie.jpg" data-lightbox-title="Under the Lotus" data-lightbox-meta="Lotus Temple · 29 October 2024"><img src="assets/gallery/delhi/lotus-temple-selfie.jpg" alt="Low-angle view beneath the Lotus Temple" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/delhi/raj-ghat.jpg" data-lightbox-title="Raj Ghat" data-lightbox-meta="Delhi · 28 October 2024"><img src="assets/gallery/delhi/raj-ghat.jpg" alt="Raj Ghat memorial and eternal flame" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/delhi/jama-masjid-night.jpg" data-lightbox-title="Jama Masjid after dark" data-lightbox-meta="Old Delhi · 28 October 2024"><img src="assets/gallery/delhi/jama-masjid-night.jpg" alt="Jama Masjid illuminated at night" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/delhi/red-fort-night.jpg" data-lightbox-title="Red Fort lights" data-lightbox-meta="Old Delhi · 28 October 2024" data-lightbox-rotate="90"><img class="image-rotate-90" src="assets/gallery/delhi/red-fort-night.jpg" alt="Illuminated Red Fort at night" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/delhi/train-journey.jpg" data-lightbox-title="The journey onward" data-lightbox-meta="Train journey · 31 October 2024"><img src="assets/gallery/delhi/train-journey.jpg" alt="Travel backpack on a train seat" loading="lazy" decoding="async" /></button>
+            </div>
+          </div>
+
+          <div class="place-feature place-feature-sikkim">
+            <div class="place-feature-copy">
+              <span class="place-number">02</span>
+              <div>
+                <span class="gallery-kicker"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Travel chapter</span>
+                <h3>Sikkim</h3>
+                <p>Four winter days moving from misty Gangtok to mountain villages, alpine roads, prayer flags, waterfalls, and snow-covered heights.</p>
+                <span class="place-count"><i class="bi bi-images" aria-hidden="true"></i> 18 photographs · February 2025</span>
+              </div>
+            </div>
+            <div class="place-photo-mosaic" aria-label="Sikkim collection previews">
+              <button type="button" data-lightbox-image="assets/gallery/sikkim/valley-overlook.jpg" data-lightbox-title="Valley overlook" data-lightbox-meta="Sikkim · 5 February 2025"><img src="assets/gallery/sikkim/valley-overlook.jpg" alt="Misty Sikkim valley overlook" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/sikkim/snowfield-portrait.jpg" data-lightbox-title="Into the snow" data-lightbox-meta="North Sikkim · 6 February 2025"><img src="assets/gallery/sikkim/snowfield-portrait.jpg" alt="Portrait among snowy rocks" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/sikkim/high-altitude-flags.jpg" data-lightbox-title="High-altitude colors" data-lightbox-meta="North Sikkim · 6 February 2025"><img src="assets/gallery/sikkim/high-altitude-flags.jpg" alt="Indian and colorful flags in North Sikkim" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/sikkim/mountain-morning.jpg" data-lightbox-title="Mountain morning" data-lightbox-meta="North Sikkim · 7 February 2025"><img src="assets/gallery/sikkim/mountain-morning.jpg" alt="Traveler before sunlit peaks" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/sikkim/mountain-panorama.jpg" data-lightbox-title="Valley in full" data-lightbox-meta="North Sikkim · 7 February 2025"><img src="assets/gallery/sikkim/mountain-panorama.jpg" alt="Panoramic mountain valley" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/sikkim/mg-marg-evening.jpg" data-lightbox-title="MG Marg after dark" data-lightbox-meta="Gangtok · 7 February 2025"><img src="assets/gallery/sikkim/mg-marg-evening.jpg" alt="Evening on MG Marg in Gangtok" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/sikkim/mountain-portrait.jpg" data-lightbox-title="Against the peaks" data-lightbox-meta="North Sikkim · 7 February 2025"><img src="assets/gallery/sikkim/mountain-portrait.jpg" alt="Portrait against the mountain peaks" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/sikkim/mountain-group.jpg" data-lightbox-title="Friends in the mountains" data-lightbox-meta="North Sikkim · 8 February 2025"><img src="assets/gallery/sikkim/mountain-group.jpg" alt="Friends posing in the mountains" loading="lazy" decoding="async" /></button>
+              <button type="button" data-lightbox-image="assets/gallery/sikkim/gangtok-ropeway.jpg" data-lightbox-title="Above Gangtok" data-lightbox-meta="Gangtok · 8 February 2025"><img src="assets/gallery/sikkim/gangtok-ropeway.jpg" alt="Gangtok viewed from the ropeway" loading="lazy" decoding="async" /></button>
+            </div>
+          </div>
+
+          <div class="place-feature">
+            <div class="place-feature-copy">
+              <span class="place-number">03</span>
               <div>
                 <span class="gallery-kicker"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Current base</span>
                 <h3>Bengaluru, Karnataka</h3>
@@ -128,7 +322,7 @@
 
           <div class="place-feature place-feature-digital">
             <div class="place-feature-copy">
-              <span class="place-number">02</span>
+              <span class="place-number">04</span>
               <div>
                 <span class="gallery-kicker"><i class="bi bi-brush-fill" aria-hidden="true"></i> Location independent</span>
                 <h3>Digital Studio</h3>
@@ -143,38 +337,92 @@
         <div class="gallery-panel" id="panel-timeline" role="tabpanel" aria-labelledby="tab-timeline" data-gallery-panel="timeline" hidden>
           <div class="timeline-intro">
             <span class="gallery-kicker"><i class="bi bi-clock-history" aria-hidden="true"></i> Collection timeline</span>
-            <h3>Added in 2026</h3>
-            <p>The beginning of this personal visual archive.</p>
+            <h3>2024—2026</h3>
+            <p>From Delhi's landmarks through a four-day Sikkim winter journey to the portraits that began the online archive.</p>
           </div>
           <ol class="photo-timeline">
             <li>
               <span class="timeline-marker">01</span>
-              <button class="timeline-photo" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Original portrait" data-lightbox-meta="Added 2026"><img src="assets/profile.jpg" alt="Original black and white portrait of Ashish Alam Kabir" /></button>
-              <div class="timeline-copy"><span>2026 · Original</span><h4>Quiet focus</h4><p>The first portrait in the archive, presented in its original monochrome style.</p></div>
+              <button class="timeline-photo" type="button" data-lightbox-image="assets/gallery/delhi/qutub-minar.jpg" data-lightbox-title="Qutub Minar" data-lightbox-meta="Mehrauli, Delhi · 28 October 2024"><img src="assets/gallery/delhi/qutub-minar.jpg" alt="Ashish Alam Kabir at Qutub Minar" loading="lazy" decoding="async" /></button>
+              <div class="timeline-copy"><span>28 October 2024</span><h4>Old Delhi &amp; Mehrauli</h4><p>Qutub Minar, Raj Ghat, the Red Fort, and Jama Masjid opened the Delhi chapter.</p></div>
             </li>
             <li>
               <span class="timeline-marker">02</span>
-              <button class="timeline-photo" type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Illustrated portrait" data-lightbox-meta="Added 2026"><img src="assets/ANIMATION.png" alt="Illustrated portrait of Ashish Alam Kabir" /></button>
+              <button class="timeline-photo" type="button" data-lightbox-image="assets/gallery/delhi/lotus-temple.jpg" data-lightbox-title="Lotus Temple" data-lightbox-meta="New Delhi · 29 October 2024"><img src="assets/gallery/delhi/lotus-temple.jpg" alt="Ashish Alam Kabir in front of the Lotus Temple" loading="lazy" decoding="async" /></button>
+              <div class="timeline-copy"><span>29 October 2024</span><h4>Lotus Temple</h4><p>A quiet architectural stop and two perspectives beneath its distinctive white petals.</p></div>
+            </li>
+            <li>
+              <span class="timeline-marker">03</span>
+              <button class="timeline-photo" type="button" data-lightbox-image="assets/gallery/delhi/train-journey.jpg" data-lightbox-title="The journey onward" data-lightbox-meta="Train journey · 31 October 2024"><img src="assets/gallery/delhi/train-journey.jpg" alt="Travel backpack on a train seat" loading="lazy" decoding="async" /></button>
+              <div class="timeline-copy"><span>31 October 2024</span><h4>The journey onward</h4><p>A final frame from the train, closing the Delhi travel chapter.</p></div>
+            </li>
+            <li>
+              <span class="timeline-marker">04</span>
+              <button class="timeline-photo" type="button" data-lightbox-image="assets/gallery/sikkim/valley-overlook.jpg" data-lightbox-title="Valley overlook" data-lightbox-meta="Sikkim · 5 February 2025"><img src="assets/gallery/sikkim/valley-overlook.jpg" alt="Ashish Alam Kabir looking across a misty Sikkim valley" loading="lazy" decoding="async" /></button>
+              <div class="timeline-copy"><span>5 February 2025</span><h4>Into the hills</h4><p>Misty valleys, prayer flags, and a waterfall stop opened the Sikkim chapter.</p></div>
+            </li>
+            <li>
+              <span class="timeline-marker">05</span>
+              <button class="timeline-photo" type="button" data-lightbox-image="assets/gallery/sikkim/snowfield-portrait.jpg" data-lightbox-title="Into the snow" data-lightbox-meta="North Sikkim · 6 February 2025"><img src="assets/gallery/sikkim/snowfield-portrait.jpg" alt="Ashish Alam Kabir among snowy mountain rocks" loading="lazy" decoding="async" /></button>
+              <div class="timeline-copy"><span>6 February 2025</span><h4>Higher into the snow</h4><p>Clear ridgelines, colorful flags, alpine roads, and the first close encounter with snow.</p></div>
+            </li>
+            <li>
+              <span class="timeline-marker">06</span>
+              <button class="timeline-photo" type="button" data-lightbox-image="assets/gallery/sikkim/mountain-morning.jpg" data-lightbox-title="Mountain morning" data-lightbox-meta="North Sikkim · 7 February 2025"><img src="assets/gallery/sikkim/mountain-morning.jpg" alt="Traveler looking toward the mountains in morning light" loading="lazy" decoding="async" /></button>
+              <div class="timeline-copy"><span>7 February 2025</span><h4>Peaks to MG Marg</h4><p>A mountain sunrise and panoramic valley gave way to Gangtok's shops and evening lights.</p></div>
+            </li>
+            <li>
+              <span class="timeline-marker">07</span>
+              <button class="timeline-photo" type="button" data-lightbox-image="assets/gallery/sikkim/mountain-group.jpg" data-lightbox-title="Friends in the mountains" data-lightbox-meta="North Sikkim · 8 February 2025"><img src="assets/gallery/sikkim/mountain-group.jpg" alt="Four friends posing together in the mountains" loading="lazy" decoding="async" /></button>
+              <div class="timeline-copy"><span>8 February 2025</span><h4>One last mountain frame</h4><p>A group portrait beneath the peaks and a ropeway view over misty Gangtok closed the journey.</p></div>
+            </li>
+            <li>
+              <span class="timeline-marker">08</span>
+              <button class="timeline-photo" type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Original portrait" data-lightbox-meta="Added 2026"><img src="assets/profile.jpg" alt="Original black and white portrait of Ashish Alam Kabir" loading="lazy" decoding="async" /></button>
+              <div class="timeline-copy"><span>2026 · Original</span><h4>Quiet focus</h4><p>The first portrait in the online archive, presented in its original monochrome style.</p></div>
+            </li>
+            <li>
+              <span class="timeline-marker">09</span>
+              <button class="timeline-photo timeline-photo-contain" type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Illustrated portrait" data-lightbox-meta="Added 2026"><img src="assets/ANIMATION.png" alt="Illustrated portrait of Ashish Alam Kabir" loading="lazy" decoding="async" /></button>
               <div class="timeline-copy"><span>2026 · Illustrated</span><h4>A creative edition</h4><p>A warmer, illustrated interpretation that adds a second visual language to the collection.</p></div>
             </li>
           </ol>
         </div>
 
         <div class="gallery-panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map" data-gallery-panel="map" hidden>
-          <div class="map-layout">
+          <div class="map-layout map-layout-sikkim">
             <div class="map-canvas">
-              <iframe title="Approximate map location of Bengaluru, India" src="https://www.openstreetmap.org/export/embed.html?bbox=77.3500%2C12.7500%2C77.8500%2C13.1500&amp;layer=mapnik&amp;marker=12.9716%2C77.5946" loading="lazy"></iframe>
+              <iframe title="Approximate map location of Sikkim, India" src="https://www.openstreetmap.org/export/embed.html?bbox=88.0000%2C26.7000%2C89.0000%2C28.2000&amp;layer=mapnik&amp;marker=27.3389%2C88.6065" loading="lazy"></iframe>
               <span class="map-privacy"><i class="bi bi-shield-check" aria-hidden="true"></i> Approximate location for privacy</span>
             </div>
             <div class="map-story">
               <span class="gallery-kicker"><i class="bi bi-pin-map-fill" aria-hidden="true"></i> Mapped memory</span>
-              <h3>Bengaluru</h3>
-              <p>Current base and the geographic chapter connected to this collection.</p>
+              <h3>Sikkim</h3>
+              <p>The February 2025 chapter follows a winter route from Gangtok into North Sikkim's mountain valleys, alpine roads, villages, and snowfields.</p>
               <div class="map-thumbnails">
-                <button type="button" data-lightbox-image="assets/profile.jpg" data-lightbox-title="Original portrait" data-lightbox-meta="Bengaluru · Added 2026"><img src="assets/profile.jpg" alt="Original portrait thumbnail" /></button>
-                <button type="button" data-lightbox-image="assets/ANIMATION.png" data-lightbox-title="Illustrated portrait" data-lightbox-meta="Bengaluru chapter · Added 2026"><img src="assets/ANIMATION.png" alt="Illustrated portrait thumbnail" /></button>
+                <button type="button" data-lightbox-image="assets/gallery/sikkim/valley-overlook.jpg" data-lightbox-title="Valley overlook" data-lightbox-meta="Sikkim · 5 February 2025"><img src="assets/gallery/sikkim/valley-overlook.jpg" alt="Sikkim valley thumbnail" loading="lazy" decoding="async" /></button>
+                <button type="button" data-lightbox-image="assets/gallery/sikkim/snowfield-portrait.jpg" data-lightbox-title="Into the snow" data-lightbox-meta="North Sikkim · 6 February 2025"><img src="assets/gallery/sikkim/snowfield-portrait.jpg" alt="North Sikkim snow thumbnail" loading="lazy" decoding="async" /></button>
+                <button type="button" data-lightbox-image="assets/gallery/sikkim/mountain-group.jpg" data-lightbox-title="Friends in the mountains" data-lightbox-meta="North Sikkim · 8 February 2025"><img src="assets/gallery/sikkim/mountain-group.jpg" alt="Sikkim group portrait thumbnail" loading="lazy" decoding="async" /></button>
               </div>
-              <a href="https://www.openstreetmap.org/?mlat=12.9716&amp;mlon=77.5946#map=11/12.9716/77.5946" target="_blank" rel="noreferrer">Open larger map <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              <a href="https://www.openstreetmap.org/?mlat=27.3389&amp;mlon=88.6065#map=9/27.3389/88.6065" target="_blank" rel="noreferrer">Open larger map <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="map-layout">
+            <div class="map-canvas">
+              <iframe title="Approximate map location of Delhi, India" src="https://www.openstreetmap.org/export/embed.html?bbox=76.8500%2C28.4000%2C77.4000%2C28.9000&amp;layer=mapnik&amp;marker=28.6139%2C77.2090" loading="lazy"></iframe>
+              <span class="map-privacy"><i class="bi bi-shield-check" aria-hidden="true"></i> Approximate location for privacy</span>
+            </div>
+            <div class="map-story">
+              <span class="gallery-kicker"><i class="bi bi-pin-map-fill" aria-hidden="true"></i> Mapped memory</span>
+              <h3>Delhi</h3>
+              <p>The October 2024 travel chapter, stretching from Mehrauli's historic monuments to New Delhi and the landmarks of the old city.</p>
+              <div class="map-thumbnails">
+                <button type="button" data-lightbox-image="assets/gallery/delhi/india-gate.jpg" data-lightbox-title="India Gate portrait" data-lightbox-meta="New Delhi · October 2024"><img src="assets/gallery/delhi/india-gate.jpg" alt="India Gate portrait thumbnail" loading="lazy" decoding="async" /></button>
+                <button type="button" data-lightbox-image="assets/gallery/delhi/qutub-minar.jpg" data-lightbox-title="Qutub Minar" data-lightbox-meta="Mehrauli, Delhi · October 2024"><img src="assets/gallery/delhi/qutub-minar.jpg" alt="Qutub Minar thumbnail" loading="lazy" decoding="async" /></button>
+                <button type="button" data-lightbox-image="assets/gallery/delhi/lotus-temple.jpg" data-lightbox-title="Lotus Temple" data-lightbox-meta="New Delhi · October 2024"><img src="assets/gallery/delhi/lotus-temple.jpg" alt="Lotus Temple thumbnail" loading="lazy" decoding="async" /></button>
+              </div>
+              <a href="https://www.openstreetmap.org/?mlat=28.6139&amp;mlon=77.2090#map=10/28.6139/77.2090" target="_blank" rel="noreferrer">Open larger map <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -182,7 +430,7 @@
 
       <section class="gallery-note" aria-label="Gallery note">
         <i class="bi bi-camera-fill" aria-hidden="true"></i>
-        <div><span>More moments, soon.</span><p>This archive is designed to grow as new photos, places, and dates are added.</p></div>
+        <div><span>Twenty-nine moments and growing.</span><p>Each journey has its own organized collection and photo folder.</p></div>
         <a href="index.html#contact">Get in touch <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
       </section>
     </main>
@@ -213,7 +461,7 @@
       </div>
       <div class="footer-bottom">
         <p>© 2026 Ashish Alam Kabir</p>
-        <span>Personal Gallery · Bengaluru, India</span>
+        <span>Personal Gallery · Delhi, Sikkim &amp; Bengaluru, India</span>
       </div>
     </footer>
   </div>

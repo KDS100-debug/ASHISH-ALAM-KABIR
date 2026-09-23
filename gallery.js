@@ -84,8 +84,12 @@ function closeLightbox() {
 function openLightbox(trigger) {
   if (!lightbox || !lightboxImage || !lightboxTitle || !lightboxMeta) return;
 
+  const isRotated = trigger.dataset.lightboxRotate === '90';
+
   lightboxImage.src = trigger.dataset.lightboxImage;
   lightboxImage.alt = trigger.querySelector('img')?.alt || trigger.dataset.lightboxTitle || 'Gallery portrait';
+  lightboxImage.classList.toggle('is-rotated-90', isRotated);
+  lightbox.classList.toggle('has-rotated-image', isRotated);
   lightboxTitle.textContent = trigger.dataset.lightboxTitle || 'Gallery portrait';
   lightboxMeta.textContent = trigger.dataset.lightboxMeta || '';
   document.body.classList.add('lightbox-open');
