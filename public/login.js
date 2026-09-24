@@ -19,6 +19,7 @@ const passwordToggle = document.querySelector('.password-toggle');
 let authMode = 'user';
 let authFlow = 'sign-in';
 let supabaseClient;
+const isSignupConfirmation = new URLSearchParams(window.location.hash.slice(1)).get('type') === 'signup';
 
 function setStatus(message = '', type = '') {
   authStatus.textContent = message;
@@ -97,7 +98,10 @@ async function handleSignUp() {
   const { data, error } = await supabaseClient.auth.signUp({
     email: authEmail.value.trim(),
     password: authPassword.value,
-    options: { data: { full_name: fullName.value.trim() } },
+    options: {
+      data: { full_name: fullName.value.trim() },
+      emailRedirectTo: `${window.location.origin}/login.html`,
+    },
   });
 
   if (error) throw error;
@@ -149,6 +153,14 @@ passwordToggle.addEventListener('click', () => {
 (async function initializeLogin() {
   try {
     supabaseClient = await window.AAKAuth.getClient();
+    const { data, error } = await supabaseClient.auth.getSession();
+    if (error) throw error;
+
+    if (data.session && isSignupConfirmation) {
+      window.history.replaceState(null, '', window.location.pathname);
+      setStatus('Email confirmed. Redirecting to your dashboard…', 'success');
+      window.location.replace('dashboard.html');
+    }
   } catch (error) {
     if (error?.code === 'SUPABASE_NOT_CONFIGURED') authSetupNotice.hidden = false;
   }

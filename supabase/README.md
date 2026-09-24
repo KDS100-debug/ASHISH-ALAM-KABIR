@@ -33,7 +33,7 @@ Restart the server after changing environment variables.
 
 ## 4. Configure email authentication
 
-In **Authentication → URL Configuration**, set the production Site URL. For local development, add `http://localhost:3000` to the allowed redirect URLs. Email/password signup must be enabled in **Authentication → Providers**.
+In **Authentication → URL Configuration**, set the production Site URL to `https://www.ashishalamkabir.com`. Add `https://www.ashishalamkabir.com/login.html` and `http://localhost:3000/login.html` to the allowed redirect URLs. Email/password signup must be enabled in **Authentication → Providers**.
 
 If email confirmation is enabled, new users must confirm their email before signing in.
 
