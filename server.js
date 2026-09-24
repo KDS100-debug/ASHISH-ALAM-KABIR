@@ -6,15 +6,11 @@ const { getPortfolioProfile, getProjectsByCategory, getProjectBySlug, guardPromp
 
 const app = express();
 const port = Number(process.env.PORT || 3000);
+const publicDirectory = path.join(__dirname, 'public');
 const githubUsername = 'AshishAlamKabir';
 const openai = process.env.OPENAI_API_KEY ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) : null;
 
 app.use(express.json({ limit: '512kb' }));
-
-app.get('/vendor/supabase.js', (req, res) => {
-  res.setHeader('Cache-Control', 'public, max-age=86400');
-  res.sendFile(path.join(__dirname, 'node_modules', '@supabase', 'supabase-js', 'dist', 'umd', 'supabase.js'));
-});
 
 app.get('/api/auth/config', (req, res) => {
   const url = process.env.SUPABASE_URL || '';
@@ -179,12 +175,16 @@ app.post('/api/ai/chat', async (req, res) => {
   }
 });
 
-app.use(express.static(__dirname));
+app.use(express.static(publicDirectory));
 
 app.get('*', (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
+  res.sendFile(path.join(publicDirectory, 'index.html'));
 });
 
-app.listen(port, () => {
-  console.log(`Portfolio AI server running on http://localhost:${port}`);
-});
+module.exports = app;
+
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Portfolio AI server running on http://localhost:${port}`);
+  });
+}

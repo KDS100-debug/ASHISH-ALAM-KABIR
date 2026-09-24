@@ -77,7 +77,19 @@ async function handleSignIn() {
   }
 
   const redirect = new URLSearchParams(window.location.search).get('redirect');
-  const safeRedirect = redirect && redirect.startsWith('/') && !redirect.startsWith('//') ? redirect : 'dashboard.html';
+  let safeRedirect = 'dashboard.html';
+
+  if (redirect) {
+    try {
+      const destination = new URL(redirect, window.location.origin);
+      if (destination.origin === window.location.origin) {
+        safeRedirect = `${destination.pathname}${destination.search}${destination.hash}`;
+      }
+    } catch {
+      // Keep the default dashboard destination for malformed URLs.
+    }
+  }
+
   window.location.assign(safeRedirect);
 }
 

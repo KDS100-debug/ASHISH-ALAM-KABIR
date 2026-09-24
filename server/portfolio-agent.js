@@ -1,4 +1,4 @@
-const { portfolioData } = require('../data.js');
+const { portfolioData } = require('../public/data.js');
 
 const PROFILE = portfolioData.profile || {
   name: 'Ashish Alam Kabir',
