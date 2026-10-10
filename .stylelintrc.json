@@ -4,7 +4,6 @@
     "at-rule-no-unknown": [true, { "ignoreAtRules": ["layer"] }],
     "color-named": "never",
     "declaration-no-important": true,
-    "unit-whitelist": ["px", "rem", "%", "vh", "vw", "em", "ch"],
-    "max-empty-lines": 2
+    "unit-allowed-list": ["px", "rem", "%", "vh", "vw", "em", "ch", "fr", "ms", "s", "deg"]
   }
 }

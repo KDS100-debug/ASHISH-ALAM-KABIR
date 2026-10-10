@@ -1,5 +1,5 @@
 /* Selectors are grouped by gallery component to keep the visual states together. */
-/* stylelint-disable no-descending-specificity */
+/* stylelint-disable no-descending-specificity, no-duplicate-selectors */
 
 .gallery-page {
   --gallery-paper: #f2ede2;
@@ -1302,5 +1302,264 @@
 @media (max-width: 520px) {
   .gallery-tabs {
     background: #0a0a0a;
+  }
+}
+
+/* Motion polish and progressive interaction enhancements. */
+.gallery-hero-copy > * {
+  animation: gallery-hero-reveal 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gallery-hero-copy > :nth-child(2) { animation-delay: 80ms; }
+.gallery-hero-copy > :nth-child(3) { animation-delay: 150ms; }
+.gallery-hero-copy > :nth-child(4) { animation-delay: 220ms; }
+
+.gallery-hero-frames {
+  animation: gallery-frames-reveal 900ms 140ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gallery-tabs {
+  --active-tab-width: 0px;
+  --active-tab-x: 0px;
+  isolation: isolate;
+}
+
+.gallery-tabs::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0.4rem;
+  left: 0;
+  width: var(--active-tab-width);
+  height: calc(100% - 0.8rem);
+  border: 1px solid #780000;
+  border-radius: 999px;
+  background: rgba(160, 0, 0, 0.16);
+  box-shadow: 0 8px 24px rgba(120, 0, 0, 0.14);
+  transform: translateX(var(--active-tab-x));
+  transition:
+    width 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.gallery-tabs button[aria-selected="true"] {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.gallery-panel:not([hidden]) {
+  view-transition-name: gallery-panel;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-old(gallery-panel) {
+  animation: gallery-panel-out 180ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+::view-transition-new(gallery-panel) {
+  animation: gallery-panel-in 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gallery-motion-ready .gallery-reveal {
+  opacity: 0;
+  filter: blur(5px);
+  translate: 0 24px;
+  scale: 0.985;
+}
+
+.gallery-motion-ready .gallery-reveal.is-revealed {
+  animation: gallery-scroll-reveal 680ms var(--reveal-delay, 0ms) cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.photo-lightbox {
+  opacity: 0;
+  transform: translateY(18px) scale(0.97);
+  transition:
+    opacity 220ms ease,
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.photo-lightbox[open].is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.photo-lightbox.is-closing {
+  pointer-events: none;
+}
+
+.photo-lightbox::backdrop {
+  background: rgba(2, 3, 5, 0);
+  backdrop-filter: blur(0);
+  transition:
+    background 260ms ease,
+    backdrop-filter 260ms ease;
+}
+
+.photo-lightbox.is-open::backdrop {
+  background: rgba(2, 3, 5, 0.88);
+  backdrop-filter: blur(16px);
+}
+
+.lightbox-stage {
+  touch-action: pan-y;
+  will-change: opacity, transform;
+}
+
+.lightbox-nav,
+.lightbox-close {
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lightbox-nav {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(8, 10, 14, 0.72);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.lightbox-previous { left: 1rem; }
+.lightbox-next { right: 1rem; }
+
+.lightbox-nav:hover,
+.lightbox-nav:focus-visible,
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(160, 0, 0, 0.88);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  transform: scale(1.06);
+}
+
+.lightbox-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.lightbox-counter {
+  flex: 0 0 auto;
+  color: #8f8f8f;
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.lightbox-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.lightbox-progress span {
+  display: block;
+  width: var(--lightbox-progress, 0%);
+  height: 100%;
+  background: #d00000;
+  transition: width 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes gallery-hero-reveal {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gallery-frames-reveal {
+  from { opacity: 0; transform: translateY(26px) scale(0.975); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes gallery-panel-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-8px) scale(0.995); }
+}
+
+@keyframes gallery-scroll-reveal {
+  from { opacity: 0; filter: blur(5px); translate: 0 24px; scale: 0.985; }
+  to { opacity: 1; filter: blur(0); translate: 0 0; scale: 1; }
+}
+
+@media (max-width: 620px) {
+  .lightbox-nav {
+    top: auto;
+    bottom: 5.15rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    transform: none;
+  }
+
+  .lightbox-previous { left: 0.75rem; }
+  .lightbox-next { right: 0.75rem; }
+
+  .lightbox-nav:hover,
+  .lightbox-nav:focus-visible {
+    transform: scale(1.06);
+  }
+
+  .lightbox-caption {
+    min-height: 5.25rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-hero-copy > *,
+  .gallery-hero-frames,
+  .gallery-motion-ready .gallery-reveal,
+  .gallery-motion-ready .gallery-reveal.is-revealed {
+    opacity: 1;
+    animation: none;
+    filter: none;
+    transform: none;
+    translate: none;
+    scale: none;
+  }
+
+  .gallery-tabs::before,
+  .photo-lightbox,
+  .photo-lightbox::backdrop,
+  .lightbox-progress span {
+    transition: none;
+  }
+
+  ::view-transition-old(gallery-panel),
+  ::view-transition-new(gallery-panel) {
+    animation: none;
   }
 }
